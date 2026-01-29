@@ -1,14 +1,15 @@
-# Application d'Authentification Moderne
+# Projet File Rouge - Shoes Process
 
-Une application d'authentification élégante construite avec **Nuxt 3**, **Tailwind CSS** et **Supabase**.
+Application e-commerce front construite avec **Nuxt 3** et **Tailwind CSS**, avec données locales (localStorage).
 
 ## ✨ Caractéristiques
 
 - **Design moderne et élégant** - Interface avec dégradés, glassmorphism et animations fluides
-- **Authentification sécurisée** - Gérée par Supabase (backend as a service)
+- **Authentification locale** - Session stockée en localStorage
 - **Responsive** - Adapté à tous les écrans (mobile, tablette, desktop)
 - **Animations fluides** - Micro-interactions et transitions élégantes
 - **TypeScript** - Code typé pour plus de sécurité
+- **Admin local** - Gestion produits, utilisateurs, demandes contact (localStorage)
 
 ## 🎨 Design
 
@@ -56,37 +57,42 @@ L'application sera accessible sur `http://localhost:3000`
 - Animation de chargement
 - Lien vers la page de connexion
 
+### Boutique (`/chaussures`)
+- Catalogue + filtres + tri
+- Ajout au panier (localStorage)
+
+### Panier (`/panier`)
+- Gestion quantités, suppression, total
+
+### Contact (`/contact`)
+- Formulaire questions / personnalisation
+- Sauvegarde des demandes en localStorage
+
+### Admin (`/admin`)
+- Dashboard avec stats, produits, utilisateurs, contacts (localStorage)
+
 ## 🛠️ Technologies utilisées
 
 - **Nuxt 3** - Framework Vue.js pour applications web
 - **Vue 3** - Framework JavaScript progressif
 - **TypeScript** - JavaScript avec typage statique
 - **Tailwind CSS** - Framework CSS utility-first
-- **Supabase** - Backend as a service (authentification, base de données)
-- **@supabase/supabase-js** - Client JavaScript pour Supabase
+- **vee-validate** - Validation des formulaires (contact)
 
-## 🔐 Authentification
+## 🔐 Authentification (localStorage)
 
-L'application utilise Supabase pour gérer l'authentification :
+L'application gère l'authentification côté client :
 
-- **Inscription** - Création de compte avec email/password
-- **Connexion** - Authentification par email/password
-- **Session** - Gestion automatique de la session
-- **Déconnexion** - Suppression de la session
+- **Inscription** - Création de compte avec email/password (localStorage)
+- **Connexion** - Authentification locale
+- **Session** - Stockée en localStorage
+- **Déconnexion** - Suppression de la session locale
 
-### Composables
+### Composables principaux
 
-#### `useSupabase()`
-Initialise et retourne le client Supabase configuré.
-
-#### `useAuth()`
-Gère toutes les opérations d'authentification :
-- `signUp(email, password, fullName)` - Créer un compte
-- `signIn(email, password)` - Se connecter
-- `signOut()` - Se déconnecter
-- `getSession()` - Récupérer la session active
-- `user` - Utilisateur connecté (reactive)
-- `loading` - État de chargement (reactive)
+- `useAuth()` - Inscription, connexion, déconnexion, session
+- `useLoginForm()` / `useRegisterForm()` - Logique formulaires
+- `useContactForm()` - Formulaire contact (vee-validate)
 
 ## 🎯 Structure du projet
 
@@ -96,14 +102,25 @@ project/
 ├── nuxt.config.ts              # Configuration Nuxt
 ├── tailwind.config.js          # Configuration Tailwind
 ├── package.json                # Dépendances
-├── .env                        # Variables d'environnement
+├── .env.example                # Exemple d'env (optionnel)
 ├── composables/
-│   ├── useSupabase.ts         # Client Supabase
-│   └── useAuth.ts             # Logique d'authentification
+│   ├── useAuth.ts             # Auth locale
+│   ├── useContactForm.ts      # Contact (vee-validate)
+│   └── useProductFilters.ts   # Filtres boutique
+├── stores/
+│   ├── useSessionStore.ts     # Session locale
+│   ├── useUsersStore.ts       # Users locaux
+│   ├── useProductsStore.ts    # Catalogue local
+│   ├── useCartStore.ts        # Panier local
+│   └── useContactStore.ts     # Demandes contact
 └── pages/
     ├── index.vue              # Page d'accueil
     ├── login.vue              # Page de connexion
-    └── register.vue           # Page d'inscription
+    ├── register.vue           # Page d'inscription
+    ├── chaussures.vue         # Boutique
+    ├── panier.vue             # Panier
+    ├── contact.vue            # Contact
+    └── admin.vue              # Admin
 ```
 
 ## 🎨 Personnalisation
@@ -147,18 +164,11 @@ npm run build
 npm run preview
 ```
 
-## 🔒 Sécurité
-
-- Authentification gérée par Supabase (infrastructure sécurisée)
-- Pas de stockage de mots de passe en clair
-- Validation côté client et serveur
-- Protection CSRF automatique par Supabase
-
 ## 📝 Notes
 
-- L'email de confirmation Supabase peut être désactivé dans les paramètres du projet
-- Les sessions sont automatiquement gérées par Supabase
-- Le design utilise des couleurs bleues (ocean) au lieu de violet pour un look plus professionnel
+- Le projet fonctionne sans backend (localStorage uniquement).
+- Choix localStorage : projet orienté front, rapide à tester/démo sans infra, tout reste local au navigateur.
+- Le design utilise des couleurs bleues (ocean) au lieu de violet pour un look plus professionnel.
 
 ## 🎓 Pour aller plus loin
 
