@@ -1,6 +1,6 @@
 # Projet File Rouge - Shoes Process
 
-Application e-commerce front construite avec **Nuxt 3** et **Tailwind CSS**, avec données locales (localStorage).
+Application "e-commerce" front construite avec **Nuxt 3** et **Tailwind CSS**, avec données locales (localStorage).
 
 ## ✨ Caractéristiques
 
@@ -10,7 +10,7 @@ Application e-commerce front construite avec **Nuxt 3** et **Tailwind CSS**, ave
 - **Animations fluides** - Micro-interactions et transitions élégantes
 - **TypeScript** - Code typé pour plus de sécurité
 - **Admin local** - Gestion produits, utilisateurs, demandes contact (localStorage)
-
+<!-- 
 ## 🎨 Design
 
 L'application utilise un design moderne avec :
@@ -19,7 +19,7 @@ L'application utilise un design moderne avec :
 - **Glassmorphism** - Effets de verre dépoli (backdrop blur)
 - **Animations CSS** - Fade in, slide up, scale in
 - **Ombres portées** - Profondeur et dimension
-- **Bordures subtiles** - Séparations délicates
+- **Bordures subtiles** - Séparations délicates -->
 
 ## 🚀 Installation
 
@@ -122,6 +122,35 @@ project/
     ├── contact.vue            # Contact
     └── admin.vue              # Admin
 ```
+
+## 🧩 Architecture (stores / composables / composants)
+
+### Stores (localStorage)
+Les stores stockent l'état global et le persistant (localStorage). Ils exposent des getters/méthodes simples :
+- `useSessionStore` : session utilisateur courante (clé `local_auth_session`).
+- `useUsersStore` : liste des utilisateurs (clé `local_auth_users`).
+- `useProductsStore` : catalogue + catégories (clé `local_shop_products`).
+- `useCartStore` : panier par utilisateur (clé `local_cart_<userId>`).
+- `useContactStore` : demandes de contact (clé `local_contact_requests`).
+
+### Composables
+Les composables orchestrent la logique métier et l’UI :
+- `useAuth` : login/register/logout en s’appuyant sur `useUsersStore` + `useSessionStore`.
+- `useLoginForm` / `useRegisterForm` : logique de formulaire (messages, submit, navigation).
+- `useContactForm` : validation via vee-validate + enregistrement dans `useContactStore`.
+- `useProductFilters` : recherche/tri/filtre côté client.
+- `useAdminPage` : agrège les stores pour l’admin (users, produits, contacts).
+
+### Composants
+Les composants rendent l’UI. Ils restent “présentations” et consomment les composables :
+- Exemples auth : `components/auth/LoginFormCard.vue`, `RegisterFormCard.vue`.
+- Boutique : `components/shop/*` (cartes produits, filtres, etc.).
+- Admin : sections dédiées (users, produits, contacts…).
+
+### Flux typiques
+- Login : `LoginFormCard` → `useLoginForm` → `useAuth` → `useSessionStore`.
+- Contact : `ContactFormCard` → `useContactForm` → `useContactStore`.
+- Panier : pages → `useCartStore` (lié à l’utilisateur courant).
 
 ## 🎨 Personnalisation
 
