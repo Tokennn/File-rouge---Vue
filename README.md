@@ -152,6 +152,25 @@ Les composants :
 - Contact : `ContactFormCard` → `useContactForm` → `useContactStore`.
 - Panier : pages → `useCartStore` (lié à l’utilisateur courant).
 
+## 🌍 i18n
+
+Le projet utilise `@nuxtjs/i18n` avec 2 langues :
+- Français (`fr`)
+- Anglais (`en`)
+
+Fichiers de traduction :
+- `locales/fr.json`
+- `locales/en.json`
+
+Exemple d’usage (dans `pages/chaussures.vue`) :
+```ts
+const { t } = useI18n()
+```
+
+Pour ajouter une clé :
+1. Ajoute la clé dans `locales/fr.json` et `locales/en.json`.
+2. Utilise `t('ma.cle')` dans les composants/pages.
+
 <!-- ## 🎨 Personnalisation
 
 ### Couleurs
