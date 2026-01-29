@@ -134,7 +134,7 @@ Les stores stockent l'état global et le persistant (localStorage). Ils exposent
 - `useContactStore` : demandes de contact (clé `local_contact_requests`).
 
 ### Composables
-Les composables orchestrent la logique métier et l’UI :
+Les composables orchestrent :
 - `useAuth` : login/register/logout en s’appuyant sur `useUsersStore` + `useSessionStore`.
 - `useLoginForm` / `useRegisterForm` : logique de formulaire (messages, submit, navigation).
 - `useContactForm` : validation via vee-validate + enregistrement dans `useContactStore`.
@@ -142,17 +142,17 @@ Les composables orchestrent la logique métier et l’UI :
 - `useAdminPage` : agrège les stores pour l’admin (users, produits, contacts).
 
 ### Composants
-Les composants rendent l’UI. Ils restent “présentations” et consomment les composables :
+Les composants :
 - Exemples auth : `components/auth/LoginFormCard.vue`, `RegisterFormCard.vue`.
 - Boutique : `components/shop/*` (cartes produits, filtres, etc.).
 - Admin : sections dédiées (users, produits, contacts…).
 
-### Flux typiques
+### Flux "typiques"
 - Login : `LoginFormCard` → `useLoginForm` → `useAuth` → `useSessionStore`.
 - Contact : `ContactFormCard` → `useContactForm` → `useContactStore`.
 - Panier : pages → `useCartStore` (lié à l’utilisateur courant).
 
-## 🎨 Personnalisation
+<!-- ## 🎨 Personnalisation
 
 ### Couleurs
 
@@ -174,7 +174,7 @@ Les animations personnalisées sont également dans `tailwind.config.js` :
 
 - `animate-fade-in` - Apparition en fondu
 - `animate-slide-up` - Glissement vers le haut
-- `animate-scale-in` - Agrandissement progressif
+- `animate-scale-in` - Agrandissement progressif -->
 
 ## 📦 Build pour production
 
@@ -186,7 +186,7 @@ Le build sera généré dans le dossier `.output/`
 
 ## 🚀 Déploiement
 
-Pour déployer l'application :
+Pour déployer/démarrer l'application :
 
 ```bash
 npm run build
@@ -196,17 +196,17 @@ npm run preview
 ## 📝 Notes
 
 - Le projet fonctionne sans backend (localStorage uniquement).
-- Choix localStorage : projet orienté front, rapide à tester/démo sans infra, tout reste local au navigateur.
-- Le design utilise des couleurs bleues (ocean) au lieu de violet pour un look plus professionnel.
-
+- Choix localStorage : Car c'est un projet orienté front, rapide à tester/démo sans infra, tout reste en local au navigateur.
+<!-- - Le design utilise des couleurs bleues (ocean) au lieu de violet pour un look plus professionnel. -->
+<!-- 
 ## 🎓 Pour aller plus loin
 
 - Ajouter la réinitialisation de mot de passe
 - Implémenter l'authentification sociale (Google, GitHub, etc.)
 - Ajouter la gestion de profil utilisateur
 - Créer un dashboard utilisateur
-- Implémenter des routes protégées avec middleware
+- Implémenter des routes protégées avec middleware -->
 
 ---
-
-**Design moderne. Authentification sécurisée. Expérience utilisateur fluide.**
+<!-- 
+**Design moderne. Authentification sécurisée. Expérience utilisateur fluide.** -->
