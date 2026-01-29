@@ -1,0 +1,58 @@
+{
+  "common": {
+    "localeLabel": "Langue"
+  },
+  "shoes": {
+    "hero": {
+      "line": "Ligne Capsule 2024",
+      "title": "La chaussure qui passe du bitume au studio sans changer de rythme.",
+      "subtitle": "Collection limitée pensée pour le confort urbain : semelles aérées, matériaux recyclés et lignes sculptées.",
+      "backHome": "Retour à l'accueil",
+      "cart": "Panier",
+      "discover": "Découvrir la sélection",
+      "sizes": "Voir les tailles",
+      "benefits": {
+        "delivery": "Livraison 48h offerte dès 90€",
+        "returns": "Retours faciles sous 30 jours"
+      }
+    },
+    "duoPack": {
+      "label": "Pack Atelier",
+      "title": "Compose ton duo idéal.",
+      "description": "Mixe une paire performance et une paire lifestyle. -15% dès 2 articles sélectionnés.",
+      "codeLabel": "Code",
+      "add": "Ajouter au panier"
+    },
+    "reviews": {
+      "label": "Avis clients",
+      "rating": "4.8 / 5",
+      "items": {
+        "marine": {
+          "quote": "Incroyablement légères, parfaites pour la ville.",
+          "author": "Marine - Paris"
+        },
+        "elliot": {
+          "quote": "Le maintien est top sur les longues marches.",
+          "author": "Elliot - Lyon"
+        },
+        "salma": {
+          "quote": "Design futuriste mais ultra confort.",
+          "author": "Salma - Marseille"
+        }
+      }
+    },
+    "newsletter": {
+      "title": "Recevez les prochains drops avant tout le monde.",
+      "description": "Une newsletter courte, sans spam, avec les sorties et promos exclusives.",
+      "emailPlaceholder": "votre{'@'}email.com",
+      "submit": "Je m'inscris"
+    }
+  },
+  "cart": {
+    "toast": {
+      "title": "Ajouté au panier",
+      "addedProduct": "{name} a bien été ajouté.",
+      "addedCount": "{count} article ajouté au panier. | {count} articles ajoutés au panier."
+    }
+  }
+}

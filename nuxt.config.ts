@@ -1,0 +1,38 @@
+export default defineNuxtConfig({
+  compatibilityDate: '2024-04-03',
+  devtools: { enabled: true },
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
+  components: [{ path: '~/components', pathPrefix: false }],
+  i18n: {
+    defaultLocale: 'fr',
+    strategy: 'no_prefix',
+    // lazy: true,
+    restructureDir: '',
+    langDir: 'locales',
+    locales: [
+      { code: 'fr', name: 'Français', file: 'fr.json' },
+      { code: 'en', name: 'English', file: 'en.json' }
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    }
+  },
+  // runtimeConfig: {
+  //   public: {
+  //     supabaseUrl: process.env.VITE_SUPABASE_URL,
+  //     supabaseAnonKey: process.env.VITE_SUPABASE_ANON_KEY
+  //   }
+  // },
+  app: {
+    head: {
+      title: 'Auth',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      ]
+      
+    }
+  }
+})

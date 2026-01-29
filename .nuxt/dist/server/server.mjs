@@ -1,0 +1,1 @@
+export { default } from "file:///Users/quentincontreau/developpement/ProjetFileRouge%20-%20Front/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"

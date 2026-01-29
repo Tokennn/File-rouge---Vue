@@ -1,0 +1,58 @@
+{
+  "common": {
+    "localeLabel": "Language"
+  },
+  "shoes": {
+    "hero": {
+      "line": "Capsule Line 2024",
+      "title": "The shoe that moves from street to studio without missing a beat.",
+      "subtitle": "Limited collection built for urban comfort: breathable soles, recycled materials, and sculpted lines.",
+      "backHome": "Back to home",
+      "cart": "Cart",
+      "discover": "Discover the selection",
+      "sizes": "View sizes",
+      "benefits": {
+        "delivery": "Free 48h delivery from €90",
+        "returns": "Easy returns within 30 days"
+      }
+    },
+    "duoPack": {
+      "label": "Atelier Pack",
+      "title": "Build your perfect duo.",
+      "description": "Mix one performance pair and one lifestyle pair. 15% off when selecting 2 items.",
+      "codeLabel": "Code",
+      "add": "Add to cart"
+    },
+    "reviews": {
+      "label": "Customer reviews",
+      "rating": "4.8 / 5",
+      "items": {
+        "marine": {
+          "quote": "Incredibly light, perfect for the city.",
+          "author": "Marine - Paris"
+        },
+        "elliot": {
+          "quote": "Support is great on long walks.",
+          "author": "Elliot - Lyon"
+        },
+        "salma": {
+          "quote": "Futuristic design but ultra comfortable.",
+          "author": "Salma - Marseille"
+        }
+      }
+    },
+    "newsletter": {
+      "title": "Get the next drops before everyone else.",
+      "description": "A short, no-spam newsletter with exclusive launches and promos.",
+      "emailPlaceholder": "your{'@'}email.com",
+      "submit": "Sign me up"
+    }
+  },
+  "cart": {
+    "toast": {
+      "title": "Added to cart",
+      "addedProduct": "{name} was added successfully.",
+      "addedCount": "{count} item added to cart. | {count} items added to cart."
+    }
+  }
+}

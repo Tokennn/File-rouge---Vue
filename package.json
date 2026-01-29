@@ -1,0 +1,24 @@
+{
+  "name": "modern-auth-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@nuxtjs/i18n": "^10.2.1",
+    "@supabase/supabase-js": "^2.39.7",
+    "i18n": "^0.15.3",
+    "nuxt": "^3.20.2",
+    "vee-validate": "^4.15.1",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "typescript": "^5.3.3"
+  }
+}
